@@ -32,13 +32,17 @@ function generatePassword() {
   // DECLARE a new list of `charactersToUse`
   var charactersToUse = [];
 
+  // DECLARE new `password` string
+  var password = "";
+
   // Confirm for special characters
-  var isUsingSpecial = confirm("Would you like your password to contain special characters?");
+  var isUsingSpecial = confirm("Click `ok` if you would like your password to contain special characters?");
 
     // IF user confirms they're using special characters
     if (isUsingSpecial) {
       // THEN push `special` into `charactersToUse` list
       charactersToUse.push(special);
+      // AND APPEND one random character from the `special` list
     }
 
   // Confirm for numeric
@@ -48,6 +52,7 @@ function generatePassword() {
     if (isUsingNumbers) {
       // THEN push `numbers` into `charactersToUse` list
       charactersToUse.push(numbers);
+      // AND APPEND one random character from the `special` list
     }
 
   // Confirm for lower case
@@ -57,28 +62,33 @@ function generatePassword() {
     if (isUsingLowercase) {
       // THEN push `lowercase` into `charactersToUse` list
       charactersToUse.push(lowercase);
+      // AND APPEND one random character from the `special` list
     }
-
 
   // Confirm for upper case
   var isUsingUppercase = confirm("Would you like your password to contain UPPERCASE letters?");
 
     // IF user confirms they're using uppercase letters
     if (isUsingUppercase) {
+      // THEN push `uppercase` into `charactersToUse` list
       charactersToUse.push(uppercase);
+      // AND APPEND one random character from the `special` list
     }
 
-
-  // DECLARE new `password` string
-  var password = "";
+  // IF NOT `charactersToUse.length`
+  // THEN ALERT user that they need to pick at least one option
+  // AND EXIT function
 
   // Create FOR loop to check arrays
   while (password.length < passwordLength) {
 
     // SELECT `randomCharacter` from `charactersToUse`
-    // APPEND `randomCharacter` to `password`
+    // APPEND `randomCharacter` to `password` string
 
   }
+
+  // RETURN `password`
+  return password;
 
 }
 
@@ -94,9 +104,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-// Build brand new randomly generated string based on criteria
-    // and it should be displayed in alert or written on the page
-
