@@ -22,7 +22,10 @@ function generatePassword() {
 
   // Prompt for how many characters (at least 8, no more than 128)
   var passwordLength = prompt("How many characters would you like your password to be?");
-
+  
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Your password must be between 8 and 128 characters in length.");
+  }
   // Confirm for special characters
   var specialAnswer = confirm("Would you like your password to contain special characters?");
 
