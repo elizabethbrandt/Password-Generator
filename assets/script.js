@@ -22,22 +22,63 @@ function generatePassword() {
 
   // Prompt for how many characters (at least 8, no more than 128)
   var passwordLength = prompt("How many characters would you like your password to be?");
-  
-  while (passwordLength < 8 || passwordLength > 128) {
-    alert("Your password must be between 8 and 128 characters in length.");
-    var passwordLength = prompt("How many characters would you like your password to be?");
-  }
+
+    // Alerts user if their length does not meet criteria and forces them to start again
+    while (passwordLength < 8 || passwordLength > 128) {
+      alert("Your password must be between 8 and 128 characters in length.");
+      var passwordLength = prompt("How many characters would you like your password to be?");
+    }
+
+  // DECLARE a new list of `charactersToUse`
+  var charactersToUse = [];
+
   // Confirm for special characters
-  var specialAnswer = confirm("Would you like your password to contain special characters?");
+  var isUsingSpecial = confirm("Would you like your password to contain special characters?");
+
+    // IF user confirms they're using special characters
+    if (isUsingSpecial) {
+      // THEN push `special` into `charactersToUse` list
+      charactersToUse.push(special);
+    }
 
   // Confirm for numeric
-  var numericAnswer = confirm("Would you like your password to contain numeric characters?")
+  var isUsingNumbers = confirm("Would you like your password to contain numeric characters?");
+
+    // IF user confirms they're using numbers
+    if (isUsingNumbers) {
+      // THEN push `numbers` into `charactersToUse` list
+      charactersToUse.push(numbers);
+    }
 
   // Confirm for lower case
-  var lowercaseAnswer = confirm("Would you like your password to contain lowercase letters?")
+  var isUsingLowercase = confirm("Would you like your password to contain lowercase letters?");
+
+    // IF user confirms they're using lowercase letters
+    if (isUsingLowercase) {
+      // THEN push `lowercase` into `charactersToUse` list
+      charactersToUse.push(lowercase);
+    }
+
 
   // Confirm for upper case
-  var uppercaseAnswer = confirm("Would you like your password to contain UPPERCASE letters?")
+  var isUsingUppercase = confirm("Would you like your password to contain UPPERCASE letters?");
+
+    // IF user confirms they're using uppercase letters
+    if (isUsingUppercase) {
+      charactersToUse.push(uppercase);
+    }
+
+
+  // DECLARE new `password` string
+  var password = "";
+
+  // Create FOR loop to check arrays
+  while (password.length < passwordLength) {
+
+    // SELECT `randomCharacter` from `charactersToUse`
+    // APPEND `randomCharacter` to `password`
+
+  }
 
 }
 
@@ -53,8 +94,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// Prompts for information on the password
 
 
 
