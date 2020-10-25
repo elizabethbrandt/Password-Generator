@@ -101,7 +101,15 @@ function generatePassword() {
 
     console.log(charactersToUse);
 
-  // Create FOR loop to check arrays
+  // IF NOT `charactersToUse.length`
+  if (!charactersToUse.length) {
+    // THEN ALERT user that they need to pick at least one option
+    alert("You must select at least one option");
+    // AND EXIT function
+    return;
+  }
+
+  // Create while loop to check arrays
   while (password.length < passwordLength) {
 
     // SELECT `randomCharacter` from `charactersToUse`
