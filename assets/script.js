@@ -103,7 +103,7 @@ function generatePassword() {
     var randomCharacter = Math.floor(Math.random() * charactersToUse.length);
     // APPEND `randomCharacter` to `password` string
     password += randomCharacter;
-    
+
   }
 
   // RETURN `password`
