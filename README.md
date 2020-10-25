@@ -18,8 +18,8 @@
 
 ## Links
 
-* [GitHub Repo] (https://github.com/elizabethbrandt/Password-Generator)
-* [Deployed Site] (https://elizabethbrandt.github.io/Password-Generator/)
+* [GitHub Repo](https://github.com/elizabethbrandt/Password-Generator)
+* [Deployed Site](https://elizabethbrandt.github.io/Password-Generator/)
 
 ## Lessons I learned with this assignment
 
