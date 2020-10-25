@@ -36,43 +36,50 @@ function generatePassword() {
   var password = "";
 
   // Confirm for special characters
-  var isUsingSpecial = confirm("Click `ok` if you would like your password to contain special characters?");
+  var isUsingSpecial = confirm("Click 'OK' if you would like your password to contain special characters?");
 
     // IF user confirms they're using special characters
     if (isUsingSpecial) {
       // THEN push `special` into `charactersToUse` list
       charactersToUse.push(special);
       // AND APPEND one random character from the `special` list
+
     }
 
   // Confirm for numeric
-  var isUsingNumbers = confirm("Would you like your password to contain numeric characters?");
+  var isUsingNumbers = confirm("Click 'OK' if you would like your password to contain numeric characters?");
 
     // IF user confirms they're using numbers
     if (isUsingNumbers) {
       // THEN push `numbers` into `charactersToUse` list
       charactersToUse.push(numbers);
-      // AND APPEND one random character from the `special` list
+      // Generate random character from `numbers` list
+      var randomNumber = Math.floor(Math.random() * numbers.length);
+      // AND APPEND selected character to the `password`
+      // password.push(randomNumber);
+
+      console.log(randomNumber);
+      console.log(password);
     }
 
   // Confirm for lower case
-  var isUsingLowercase = confirm("Would you like your password to contain lowercase letters?");
+  var isUsingLowercase = confirm("Click 'OK' if you would like your password to contain lowercase letters?");
 
     // IF user confirms they're using lowercase letters
     if (isUsingLowercase) {
       // THEN push `lowercase` into `charactersToUse` list
       charactersToUse.push(lowercase);
-      // AND APPEND one random character from the `special` list
+      // AND APPEND one random character from the `lowercase` list
     }
 
   // Confirm for upper case
-  var isUsingUppercase = confirm("Would you like your password to contain UPPERCASE letters?");
+  var isUsingUppercase = confirm("Click 'OK' if you would like your password to contain UPPERCASE letters?");
 
     // IF user confirms they're using uppercase letters
     if (isUsingUppercase) {
       // THEN push `uppercase` into `charactersToUse` list
       charactersToUse.push(uppercase);
-      // AND APPEND one random character from the `special` list
+      // AND APPEND one random character from the `uppercase` list
     }
 
   // IF NOT `charactersToUse.length`
