@@ -43,7 +43,7 @@ function generatePassword() {
       // THEN push `special` into `charactersToUse` list
       charactersToUse.push(special);
       // Generate random character from `special` list
-      var randomSpecial = Math.floor(Math.random() * special.length);
+      var randomSpecial = special[Math.floor(Math.random() * special.length)];
       // AND APPEND selected character to the `password`
       password += randomSpecial;
 
@@ -59,7 +59,7 @@ function generatePassword() {
       // THEN push `numbers` into `charactersToUse` list
       charactersToUse.push(numbers);
       // Generate random character from `numbers` list
-      var randomNumber = Math.floor(Math.random() * numbers.length);
+      var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
       // AND APPEND selected character to the `password`
       password += randomNumber;
 
@@ -74,7 +74,13 @@ function generatePassword() {
     if (isUsingLowercase) {
       // THEN push `lowercase` into `charactersToUse` list
       charactersToUse.push(lowercase);
-      // AND APPEND one random character from the `lowercase` list
+      // Generate random character from `lowercase` list
+      var randomLowercase = lowercase[Math.floor(Math.random() * lowercase.length)];
+      // AND APPEND selected character to the `password`
+      password += randomLowercase;
+
+      console.log(randomLowercase);
+      console.log(password);
     }
 
   // Confirm for upper case
@@ -84,23 +90,21 @@ function generatePassword() {
     if (isUsingUppercase) {
       // THEN push `uppercase` into `charactersToUse` list
       charactersToUse.push(uppercase);
-      // AND APPEND one random character from the `uppercase` list
-    }
+      // Generate random character from `special` list
+      var randomUppercase = uppercase[Math.floor(Math.random() * uppercase.length)];
+      // AND APPEND selected character to the `password`
+      password += randomUppercase;
 
-  // IF NOT `charactersToUse.length`
-  if (!charactersToUse.length) {
-    // THEN ALERT user that they need to pick at least one option
-    alert("You must select at least one option");
-    // AND EXIT function
-    return;
-  }
+      console.log(randomUppercase);
+      console.log(password);
+    }
 
 
   // Create FOR loop to check arrays
   while (password.length < passwordLength) {
 
     // SELECT `randomCharacter` from `charactersToUse`
-    var randomCharacter = Math.floor(Math.random() * charactersToUse.length);
+    var randomCharacter = charactersToUse[Math.floor(Math.random() * charactersToUse.length)];
     // APPEND `randomCharacter` to `password` string
     password += randomCharacter;
 
