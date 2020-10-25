@@ -36,18 +36,23 @@ function generatePassword() {
   var password = "";
 
   // Confirm for special characters
-  var isUsingSpecial = confirm("Click 'OK' if you would like your password to contain special characters?");
+  var isUsingSpecial = confirm("Click 'OK' if you would like your password to contain special characters.");
 
     // IF user confirms they're using special characters
     if (isUsingSpecial) {
       // THEN push `special` into `charactersToUse` list
       charactersToUse.push(special);
-      // AND APPEND one random character from the `special` list
+      // Generate random character from `special` list
+      var randomSpecial = Math.floor(Math.random() * special.length);
+      // AND APPEND selected character to the `password`
+      password += randomSpecial;
 
+      console.log(randomSpecial);
+      console.log(password);
     }
 
   // Confirm for numeric
-  var isUsingNumbers = confirm("Click 'OK' if you would like your password to contain numeric characters?");
+  var isUsingNumbers = confirm("Click 'OK' if you would like your password to contain numeric characters.");
 
     // IF user confirms they're using numbers
     if (isUsingNumbers) {
@@ -56,14 +61,14 @@ function generatePassword() {
       // Generate random character from `numbers` list
       var randomNumber = Math.floor(Math.random() * numbers.length);
       // AND APPEND selected character to the `password`
-      // password.push(randomNumber);
+      password += randomNumber;
 
       console.log(randomNumber);
       console.log(password);
     }
 
   // Confirm for lower case
-  var isUsingLowercase = confirm("Click 'OK' if you would like your password to contain lowercase letters?");
+  var isUsingLowercase = confirm("Click 'OK' if you would like your password to contain lowercase letters.");
 
     // IF user confirms they're using lowercase letters
     if (isUsingLowercase) {
@@ -73,7 +78,7 @@ function generatePassword() {
     }
 
   // Confirm for upper case
-  var isUsingUppercase = confirm("Click 'OK' if you would like your password to contain UPPERCASE letters?");
+  var isUsingUppercase = confirm("Click 'OK' if you would like your password to contain UPPERCASE letters.");
 
     // IF user confirms they're using uppercase letters
     if (isUsingUppercase) {
@@ -83,15 +88,22 @@ function generatePassword() {
     }
 
   // IF NOT `charactersToUse.length`
-  // THEN ALERT user that they need to pick at least one option
-  // AND EXIT function
+  if (!charactersToUse.length) {
+    // THEN ALERT user that they need to pick at least one option
+    alert("You must select at least one option");
+    // AND EXIT function
+    return;
+  }
+
 
   // Create FOR loop to check arrays
   while (password.length < passwordLength) {
 
     // SELECT `randomCharacter` from `charactersToUse`
+    var randomCharacter = Math.floor(Math.random() * charactersToUse.length);
     // APPEND `randomCharacter` to `password` string
-
+    password += randomCharacter;
+    
   }
 
   // RETURN `password`
