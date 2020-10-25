@@ -46,9 +46,6 @@ function generatePassword() {
       var randomSpecial = special[Math.floor(Math.random() * special.length)];
       // AND APPEND selected character to the `password`
       password += randomSpecial;
-
-      console.log(randomSpecial);
-      console.log(password);
     }
 
   // Confirm for numeric
@@ -62,9 +59,6 @@ function generatePassword() {
       var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
       // AND APPEND selected character to the `password`
       password += randomNumber;
-
-      console.log(randomNumber);
-      console.log(password);
     }
 
   // Confirm for lower case
@@ -78,9 +72,6 @@ function generatePassword() {
       var randomLowercase = lowercase[Math.floor(Math.random() * lowercase.length)];
       // AND APPEND selected character to the `password`
       password += randomLowercase;
-
-      console.log(randomLowercase);
-      console.log(password);
     }
 
   // Confirm for upper case
@@ -94,12 +85,7 @@ function generatePassword() {
       var randomUppercase = uppercase[Math.floor(Math.random() * uppercase.length)];
       // AND APPEND selected character to the `password`
       password += randomUppercase;
-
-      console.log(randomUppercase);
-      console.log(password);
     }
-
-    console.log(charactersToUse);
 
   // IF NOT `charactersToUse.length`
   if (!charactersToUse.length) {
