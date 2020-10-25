@@ -99,6 +99,7 @@ function generatePassword() {
       console.log(password);
     }
 
+    console.log(charactersToUse);
 
   // Create FOR loop to check arrays
   while (password.length < passwordLength) {
