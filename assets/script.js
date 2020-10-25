@@ -41,7 +41,7 @@ function generatePassword() {
     // IF user confirms they're using special characters
     if (isUsingSpecial) {
       // THEN push `special` into `charactersToUse` list
-      charactersToUse.push(special);
+      charactersToUse = charactersToUse.concat(special);
       // Generate random character from `special` list
       var randomSpecial = special[Math.floor(Math.random() * special.length)];
       // AND APPEND selected character to the `password`
@@ -57,7 +57,7 @@ function generatePassword() {
     // IF user confirms they're using numbers
     if (isUsingNumbers) {
       // THEN push `numbers` into `charactersToUse` list
-      charactersToUse.push(numbers);
+      charactersToUse = charactersToUse.concat(numbers);
       // Generate random character from `numbers` list
       var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
       // AND APPEND selected character to the `password`
@@ -73,7 +73,7 @@ function generatePassword() {
     // IF user confirms they're using lowercase letters
     if (isUsingLowercase) {
       // THEN push `lowercase` into `charactersToUse` list
-      charactersToUse.push(lowercase);
+      charactersToUse = charactersToUse.concat(lowercase);
       // Generate random character from `lowercase` list
       var randomLowercase = lowercase[Math.floor(Math.random() * lowercase.length)];
       // AND APPEND selected character to the `password`
@@ -89,7 +89,7 @@ function generatePassword() {
     // IF user confirms they're using uppercase letters
     if (isUsingUppercase) {
       // THEN push `uppercase` into `charactersToUse` list
-      charactersToUse.push(uppercase);
+      charactersToUse = charactersToUse.concat(uppercase);
       // Generate random character from `special` list
       var randomUppercase = uppercase[Math.floor(Math.random() * uppercase.length)];
       // AND APPEND selected character to the `password`
